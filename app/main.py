@@ -3,19 +3,12 @@ class OnlineCourse:
         self.name = name
         self.description = description
         self.weeks = weeks
-
-# course = OnlineCourse(
-#         name="Python Basics",
-#         description="The best course to start learning Python",
-#         weeks=2,
-#     )
-# print(course.description)  # The best course to start learn Python
     @staticmethod
     def days_to_weeks(days: int) -> int:
         return (days + 6) // 7
 
     @classmethod
-    def from_dict(cls, course_dict: dict) -> 'OnlineCourse':
+    def from_dict(cls, course_dict: dict) -> "OnlineCourse":
         weeks = cls.days_to_weeks(course_dict["days"])
         return cls(
             name=course_dict["name"],
